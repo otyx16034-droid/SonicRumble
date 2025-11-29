@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>索尼克大乱斗</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial Rounded MT Bold', 'Segoe UI', Arial, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0057b8 0%, #003d7a 100%);
+            color: #fff;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #ff8c00;
+            text-shadow: 3px 3px 0 #000;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: #ffcc00;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 10px 20px;
+            background: rgba(255, 140, 0, 0.8);
+            border-radius: 30px;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+        
+        .nav a:hover {
+            background: #ff8c00;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .section {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        h2 {
+            color: #ffcc00;
+            border-bottom: 2px solid #ff8c00;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .image-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+        
+        .image-item:hover {
+            transform: scale(1.03);
+        }
+        
+        .image-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .video-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .video-item {
+            background: #000;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .video-item iframe {
+            width: 100%;
+            height: 250px;
+            border: none;
+        }
+        
+        .download-section {
+            text-align: center;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background: #ff8c00;
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 20px 0;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .download-btn:hover {
+            background: #ffcc00;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+        
+        .update-info {
+            background: rgba(255, 204, 0, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-left: 5px solid #ffcc00;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .video-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav a {
+                margin: 5px;
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>索尼克大乱斗</h1>
+            <div class="image-gallery">
+                <div class="image-item">
+                    <img src="https://sonicrumble.sega.com/assets/official/img/home/ss03.jpg" alt="索尼克大乱斗游戏截图1">
+                </div>
+            <div class="subtitle">Sonic Rumble - 高速战斗体验!</div>
+            <div class="nav">
+                <a href="#about">游戏介绍</a>
+                <a href="#gallery">游戏截图</a>
+                <a href="#videos">游戏视频</a>
+                <a href="#download">下载游戏</a>
+            </div>
+        </header>
+        
+        <section id="about" class="section">
+            <h2>游戏介绍</h2>
+            <p>《索尼克大乱斗》是一款基于世嘉经典角色索尼克的多人对战游戏。玩家可以选择索尼克系列中的各种角色，在精心设计的竞技场中进行高速对战。</p>
+            <p>游戏特点：</p>
+            <ul>
+                <li>✅高速刺激的战斗体验</li>
+                <li>✅多种索尼克经典角色选择</li>
+                <li>✅多样化的战斗场景</li>
+                <li>✅支持多人本地和在线对战</li>
+                <li>✅设置完整中文界面和字</li>
+                <li>📶网络的加速器游戏</li>
+            </ul>
+        </section>
+        
+        <section id="gallery" class="section">
+            <h2>游戏截图</h2>
+            <div class="image-gallery">
+                <div class="image-item">
+                    <img src="https://cdnimg-v2.gamekee.com/wiki2.0/images/w_3840/h_2160/215/2025/11/10/de49f8a8-b02e-4756-9083-8306a7df344c.jpg?x-image-process=image/format,webp" alt="索尼克大乱斗游戏截图1">
+                </div>
+                <div class="image-item">
+                    <img src="https://cdnimg-v2.gamekee.com/wiki2.0/images/w_3840/h_2160/215/2025/11/10/3f417d38-e938-4e99-88b5-a716ca793050.jpg" alt="索尼克大乱斗游戏截图2">
+                </div>
+                <div class="image-item">
+                    <img src="https://cdnimg-v2.gamekee.com/wiki2.0/images/w_3840/h_2160/215/2025/11/10/dae74a95-76ab-41c5-9999-503a58de01b7.jpg" alt="索尼克大乱斗游戏截图3">
+                </div>
+            </div>
+        </section>
+        
+        <section id="videos" class="section">
+            <h2>游戏/电影</h2>
+            <div class="video-container">
+                <div class="video-item">
+                    <iframe src="https://m.v.qq.com/x/m/play?vid=c3181ey9voa&cid=&ptag=share_11_11&pageType=immerse&url_from=share&second_share=0&share_from=copy" allowfullscreen></iframe>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://m.v.qq.com/x/m/play?vid=i357295qnlq&cid=&ptag=share_11_11&pageType=immerse&url_from=share&second_share=0&share_from=copy" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+        
+        <section id="download" class="section download-section">
+            <h2>下载游戏</h2>
+            <p>点击下方按钮下载《索尼克大乱斗》完整游戏</p>
+            <a href="https://dw48.malavida.com/dwn/f4c0932fc31083e7fbbbd39a4d704ab0f709eee940d969b94de129431ce187a6/com.sega.sonicrumble-1.4.2.xapk" class="download-btn">立即下载 (v1.4.2)</a>
+            
+            <div class="update-info">
+                <h3>更新日志</h3>
+                <p><strong>最新版本: v1.4.2</strong> - 更新日期: 2025年11月15日</p>
+                <ul>
+                    <li>修复了多人对战中的连接问题</li>
+                    <li>优化了游戏性能，减少卡顿</li>
+                    <li>新增两个可玩角色：夏特和银色</li>
+                    <li>修复了中文翻译中的错误</li>
+                </ul>
+            </div>
+        </section>
+        
+        <footer>
+            <p>《索尼克大乱斗》中文版 &copy; 2025 - 本页面仅为展示用途，游戏版权归世嘉所有</p>
+        </footer>
+    </div>
+</body>
+</html>
