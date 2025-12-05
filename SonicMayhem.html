@@ -1,271 +1,481 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>索尼克大乱斗</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial Rounded MT Bold', 'Segoe UI', Arial, sans-serif;
-        }
-        
-        body {
-            background: linear-gradient(135deg, #0057b8 0%, #003d7a 100%);
-            color: #fff;
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        header {
-            text-align: center;
-            padding: 30px 0;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            color: #ff8c00;
-            text-shadow: 3px 3px 0 #000;
-        }
-        
-        .subtitle {
-            font-size: 1.5rem;
-            color: #ffcc00;
-        }
-        
-        .nav {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
-            flex-wrap: wrap;
-        }
-        
-        .nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            padding: 10px 20px;
-            background: rgba(255, 140, 0, 0.8);
-            border-radius: 30px;
-            transition: all 0.3s;
-            font-weight: bold;
-        }
-        
-        .nav a:hover {
-            background: #ff8c00;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-        }
-        
-        .section {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 25px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        
-        h2 {
-            color: #ffcc00;
-            border-bottom: 2px solid #ff8c00;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            font-size: 2rem;
-        }
-        
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-        
-        .image-item {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s;
-        }
-        
-        .image-item:hover {
-            transform: scale(1.03);
-        }
-        
-        .image-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            display: block;
-        }
-        
-        .video-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-        
-        .video-item {
-            background: #000;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        
-        .video-item iframe {
-            width: 100%;
-            height: 250px;
-            border: none;
-        }
-        
-        .download-section {
-            text-align: center;
-        }
-        
-        .download-btn {
-            display: inline-block;
-            background: #ff8c00;
-            color: #fff;
-            text-decoration: none;
-            padding: 15px 40px;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin: 20px 0;
-            transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        
-        .download-btn:hover {
-            background: #ffcc00;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-        }
-        
-        .update-info {
-            background: rgba(255, 204, 0, 0.2);
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 20px;
-            border-left: 5px solid #ffcc00;
-        }
-        
-        footer {
-            text-align: center;
-            padding: 20px;
-            margin-top: 30px;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
-            font-size: 0.9rem;
-        }
-        
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.2rem;
-            }
-            
-            .video-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .nav a {
-                margin: 5px;
-                padding: 8px 15px;
-                font-size: 0.9rem;
-            }
-        }
-    </style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sonic Rumble</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		}
+		
+		body {
+			background: linear-gradient(135deg, #0a1a3d 0%, #1a3d7c 100%);
+			color: #fff;
+			line-height: 1.6;
+			min-height: 100vh;
+			padding-bottom: 40px;
+		}
+		
+		.container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0 20px;
+		}
+		
+		header {
+			padding: 30px 0;
+			text-align: center;
+			background: rgba(10, 26, 61, 0.8);
+			border-bottom: 3px solid #ffcc00;
+			margin-bottom: 40px;
+		}
+		
+		.logo {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 15px;
+			margin-bottom: 15px;
+		}
+		
+		.logo-icon {
+			font-size: 3.5rem;
+			color: #ffcc00;
+			text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+		}
+		
+		.logo-text {
+			font-size: 2.8rem;
+			font-weight: 800;
+			background: linear-gradient(to right, #ffcc00, #ff6600);
+			-webkit-background-clip: text;
+			background-clip: text;
+			color: transparent;
+			text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+			letter-spacing: 1px;
+		}
+		
+		.subtitle {
+			font-size: 1.3rem;
+			color: #aaccff;
+			margin-bottom: 10px;
+		}
+		
+		.game-version {
+			display: inline-block;
+			background: #ff6600;
+			padding: 5px 15px;
+			border-radius: 20px;
+			font-size: 0.9rem;
+			font-weight: bold;
+			margin-top: 10px;
+		}
+		
+		.main-content {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 40px;
+			margin-bottom: 50px;
+		}
+		
+		.game-info {
+			flex: 1;
+			min-width: 300px;
+			background: rgba(255, 255, 255, 0.1);
+			border-radius: 15px;
+			padding: 30px;
+			backdrop-filter: blur(10px);
+			border: 1px solid rgba(255, 255, 255, 0.2);
+		}
+		
+		.download-section {
+			flex: 1;
+			min-width: 300px;
+			background: rgba(255, 255, 255, 0.1);
+			border-radius: 15px;
+			padding: 30px;
+			backdrop-filter: blur(10px);
+			border: 1px solid rgba(255, 255, 255, 0.2);
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+		
+		.section-title {
+			font-size: 1.8rem;
+			margin-bottom: 25px;
+			padding-bottom: 10px;
+			border-bottom: 2px solid #ffcc00;
+			color: #ffcc00;
+		}
+		
+		.game-description {
+			margin-bottom: 25px;
+			font-size: 1.1rem;
+			color: #e6f0ff;
+		}
+		
+		.features-list {
+			list-style-type: none;
+			margin-bottom: 25px;
+		}
+		
+		.features-list li {
+			padding: 10px 0;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+			display: flex;
+			align-items: center;
+		}
+		
+		.features-list li i {
+			color: #ffcc00;
+			margin-right: 10px;
+			font-size: 1.2rem;
+		}
+		
+		.system-requirements {
+			margin-top: 25px;
+		}
+		
+		.requirements-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+			gap: 15px;
+			margin-top: 15px;
+		}
+		
+		.requirement-item {
+			background: rgba(0, 0, 0, 0.2);
+			padding: 15px;
+			border-radius: 10px;
+			border-left: 4px solid #ff6600;
+		}
+		
+		.requirement-item h4 {
+			color: #ffcc00;
+			margin-bottom: 5px;
+			font-size: 1rem;
+		}
+		
+		.download-btn {
+			display: inline-block;
+			background: linear-gradient(to right, #ffcc00, #ff6600);
+			color: #0a1a3d;
+			font-size: 1.5rem;
+			font-weight: bold;
+			padding: 20px 50px;
+			border-radius: 50px;
+			text-decoration: none;
+			text-align: center;
+			margin: 30px 0;
+			transition: all 0.3s ease;
+			box-shadow: 0 5px 15px rgba(255, 102, 0, 0.4);
+			border: none;
+			cursor: pointer;
+			width: 100%;
+			max-width: 400px;
+		}
+		
+		.download-btn:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 10px 20px rgba(255, 102, 0, 0.6);
+		}
+		
+		.download-btn:active {
+			transform: translateY(0);
+			box-shadow: 0 3px 10px rgba(255, 102, 0, 0.4);
+		}
+		
+		.file-info {
+			background: rgba(0, 0, 0, 0.3);
+			padding: 20px;
+			border-radius: 10px;
+			width: 100%;
+			max-width: 400px;
+			margin-top: 20px;
+		}
+		
+		.file-info-item {
+			display: flex;
+			justify-content: space-between;
+			padding: 8px 0;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+		}
+		
+		.file-info-label {
+			color: #aaccff;
+		}
+		
+		.file-info-value {
+			font-weight: bold;
+			color: #ffcc00;
+		}
+		
+		.safety-note {
+			background: rgba(255, 204, 0, 0.1);
+			border-left: 5px solid #ffcc00;
+			padding: 20px;
+			margin-top: 30px;
+			border-radius: 0 10px 10px 0;
+		}
+		
+		.safety-note h3 {
+			color: #ffcc00;
+			margin-bottom: 10px;
+			display: flex;
+			align-items: center;
+			gap: 10px;
+		}
+		
+		.safety-note h3 i {
+			font-size: 1.5rem;
+		}
+		
+		.instructions {
+			margin-top: 40px;
+			background: rgba(255, 255, 255, 0.05);
+			padding: 30px;
+			border-radius: 15px;
+		}
+		
+		.instructions ol {
+			margin-left: 20px;
+			margin-top: 15px;
+		}
+		
+		.instructions li {
+			margin-bottom: 10px;
+			padding-left: 10px;
+		}
+		
+		.instructions strong {
+			color: #ffcc00;
+		}
+		
+		footer {
+			text-align: center;
+			margin-top: 50px;
+			padding-top: 20px;
+			border-top: 1px solid rgba(255, 255, 255, 0.2);
+			color: #aaccff;
+			font-size: 0.9rem;
+		}
+		
+		@media (max-width: 768px) {
+			.main-content {
+				flex-direction: column;
+			}
+			
+			.logo-text {
+				font-size: 2.2rem;
+			}
+			
+			.logo-icon {
+				font-size: 2.8rem;
+			}
+			
+			.download-btn {
+				padding: 18px 30px;
+				font-size: 1.3rem;
+			}
+		}
+		
+		@media (max-width: 480px) {
+			.logo-text {
+				font-size: 1.8rem;
+			}
+			
+			.logo-icon {
+				font-size: 2.2rem;
+			}
+			
+			.subtitle {
+				font-size: 1.1rem;
+			}
+			
+			.game-info, .download-section {
+				padding: 20px;
+			}
+			
+			.section-title {
+				font-size: 1.5rem;
+			}
+		}
+	</style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>索尼克大乱斗</h1>
-            <div class="image-gallery">
-                <div class="image-item">
-                    <img src="https://sonicrumble.sega.com/assets/official/img/home/ss03.jpg" alt="索尼克大乱斗游戏截图1">
-                </div>
-            <div class="subtitle">Sonic Rumble - 高速战斗体验!</div>
-            <div class="nav">
-                <a href="#about">游戏介绍</a>
-                <a href="#gallery">游戏截图</a>
-                <a href="#videos">游戏视频</a>
-                <a href="#download">下载游戏</a>
-            </div>
-        </header>
-        
-        <section id="about" class="section">
-            <h2>游戏介绍</h2>
-            <p>《索尼克大乱斗》是一款基于世嘉经典角色索尼克的多人对战游戏。玩家可以选择索尼克系列中的各种角色，在精心设计的竞技场中进行高速对战。</p>
-            <p>游戏特点：</p>
-            <ul>
-                <li>✅高速刺激的战斗体验</li>
-                <li>✅多种索尼克经典角色选择</li>
-                <li>✅多样化的战斗场景</li>
-                <li>✅支持多人本地和在线对战</li>
-                <li>✅设置完整中文界面和字</li>
-                <li>📶网络的加速器游戏</li>
-            </ul>
-        </section>
-        
-        <section id="gallery" class="section">
-            <h2>游戏截图</h2>
-            <div class="image-gallery">
-                <div class="image-item">
-                    <img src="https://cdnimg-v2.gamekee.com/wiki2.0/images/w_3840/h_2160/215/2025/11/10/de49f8a8-b02e-4756-9083-8306a7df344c.jpg?x-image-process=image/format,webp" alt="索尼克大乱斗游戏截图1">
-                </div>
-                <div class="image-item">
-                    <img src="https://cdnimg-v2.gamekee.com/wiki2.0/images/w_3840/h_2160/215/2025/11/10/3f417d38-e938-4e99-88b5-a716ca793050.jpg" alt="索尼克大乱斗游戏截图2">
-                </div>
-                <div class="image-item">
-                    <img src="https://cdnimg-v2.gamekee.com/wiki2.0/images/w_3840/h_2160/215/2025/11/10/dae74a95-76ab-41c5-9999-503a58de01b7.jpg" alt="索尼克大乱斗游戏截图3">
-                </div>
-            </div>
-        </section>
-        
-        <section id="videos" class="section">
-            <h2>游戏/电影</h2>
-            <div class="video-container">
-                <div class="video-item">
-                    <iframe src="https://m.v.qq.com/x/m/play?vid=c3181ey9voa&cid=&ptag=share_11_11&pageType=immerse&url_from=share&second_share=0&share_from=copy" allowfullscreen></iframe>
-                </div>
-                <div class="video-item">
-                    <iframe src="https://m.v.qq.com/x/m/play?vid=i357295qnlq&cid=&ptag=share_11_11&pageType=immerse&url_from=share&second_share=0&share_from=copy" allowfullscreen></iframe>
-                </div>
-            </div>
-        </section>
-        
-        <section id="download" class="section download-section">
-            <h2>下载游戏</h2>
-            <p>点击下方按钮下载《索尼克大乱斗》完整游戏</p>
-            <a href="https://apkcombo.com/r2?u=https%3A%2F%2Fapks.39b7cb94d40914bac590886981b0ed6e.r2.cloudflarestorage.com%2Fcom.sega.sonicrumble%2F1.4.2%2F1421.2d28688aaf9514091b2eb62829421138758540c4.apks%3Fresponse-content-disposition%3Dattachment%253B%2520filename%253D%2522Sonic%2520Rumble_1.4.2_apkcombo.com.xapk%2522%26response-content-type%3Dapplication%252Fxapk-package-archive%26X-Amz-Algorithm%3DAWS4-HMAC-SHA256%26X-Amz-Date%3D20251205T162858Z%26X-Amz-SignedHeaders%3Dhost%26X-Amz-Expires%3D14400%26X-Amz-Credential%3D3cb727b4cd4780c410b780ac7caa4da3%252F20251205%252Fauto%252Fs3%252Faws4_request%26X-Amz-Signature%3D42eeabedc0823c32aaa4b65be8984c060a0614eb4f60340462cb86c3c9391171&amp;fp=c4e30af534ff092128c0dda32bb5806c&amp;ip=198.145.121.150&amp;package_name=com.sega.sonicrumble&amp;lang=zh" class="variant octs" rel="nofollow noreferrer">立即下载 (v1.4.2)</a>
-            
-            <div class="update-info">
-                <h3>更新日志</h3>
-                <p><strong>最新版本: v1.4.2</strong> - 更新日期: 2025年11月15日</p>
-                <ul>
-                    <li>修复了多人对战中的连接问题</li>
-                    <li>优化了游戏性能，减少卡顿</li>
-                    <li>新增两个可玩角色：夏特和银色</li>
-                    <li>修复了中文翻译中的错误</li>
-                </ul>
-            </div>
-        </section>
-        
-        <footer>
-            <p>《索尼克大乱斗》中文版 &copy; 2025 - 本页面仅为展示用途，游戏版权归世嘉所有</p>
-        </footer>
-    </div>
+	<header>
+		<div class="container">
+			<div class="logo">
+				<div class="logo-icon"><i class="fas fa-bolt"></i></div>
+				<h1 class="logo-text">SONIC RUMBLE</h1>
+			</div>
+			<p class="subtitle">官方Android移动版 - 高速战斗竞速游戏</p>
+			<div class="game-version">最新版本 v1.4.2</div>
+		</div>
+	</header>
+	
+	<div class="container">
+		<div class="main-content">
+			<div class="game-info">
+				<h2 class="section-title">游戏介绍</h2>
+				<p class="game-description">
+					《Sonic Rumble》是一款高速动作竞速游戏，你将扮演索尼克和他的朋友们，在充满挑战的赛道上奔跑、跳跃、收集金环，并与敌人战斗。游戏采用全新的3D引擎打造，带来前所未有的速度感和视觉体验。
+				</p>
+				
+				<h3 class="section-title" style="font-size: 1.5rem;">主要特色</h3>
+				<ul class="features-list">
+					<li><i class="fas fa-running"></i> 扮演索尼克、塔尔斯、纳克鲁斯等经典角色</li>
+					<li><i class="fas fa-map"></i> 探索7个不同主题的关卡世界</li>
+					<li><i class="fas fa-users"></i> 多人对战模式，与全球玩家竞速</li>
+					<li><i class="fas fa-trophy"></i> 完成挑战解锁特殊皮肤和奖励</li>
+					<li><i class="fas fa-gamepad"></i> 优化触屏控制，专为移动设备设计</li>
+					<li><i class="fas fa-bolt"></i> 全新的"极速模式"带来更快节奏的游戏体验</li>
+				</ul>
+				
+				<div class="system-requirements">
+					<h3 class="section-title" style="font-size: 1.5rem;">系统要求</h3>
+					<div class="requirements-grid">
+						<div class="requirement-item">
+							<h4>操作系统</h4>
+							<p>Android 8.0 或更高版本</p>
+						</div>
+						<div class="requirement-item">
+							<h4>存储空间</h4>
+							<p>至少 850 MB 可用空间</p>
+						</div>
+						<div class="requirement-item">
+							<h4>内存</h4>
+							<p>3 GB RAM 或更高</p>
+						</div>
+						<div class="requirement-item">
+							<h4>处理器</h4>
+							<p>八核 1.8GHz 或更高</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="download-section">
+				<h2 class="section-title">下载APK文件</h2>
+				<p class="game-description" style="text-align: center;">
+					加速器游戏+VPN网络的点击下方按钮下载《Sonic Rumble》最新版APK安装文件。请确保您的设备满足系统要求。
+				</p>
+				
+				<a href="https://apkcombo.com/r2?u=https%3A%2F%2Fapks.39b7cb94d40914bac590886981b0ed6e.r2.cloudflarestorage.com%2Fcom.sega.sonicrumble%2F1.4.2%2F1421.2d28688aaf9514091b2eb62829421138758540c4.apks%3Fresponse-content-disposition%3Dattachment%253B%2520filename%253D%2522Sonic%2520Rumble_1.4.2_apkcombo.com.xapk%2522%26response-content-type%3Dapplication%252Fxapk-package-archive%26X-Amz-Algorithm%3DAWS4-HMAC-SHA256%26X-Amz-Date%3D20251205T162858Z%26X-Amz-SignedHeaders%3Dhost%26X-Amz-Expires%3D14400%26X-Amz-Credential%3D3cb727b4cd4780c410b780ac7caa4da3%252F20251205%252Fauto%252Fs3%252Faws4_request%26X-Amz-Signature%3D42eeabedc0823c32aaa4b65be8984c060a0614eb4f60340462cb86c3c9391171&amp;fp=c4e30af534ff092128c0dda32bb5806c&amp;ip=198.145.121.150&amp;package_name=com.sega.sonicrumble&amp;lang=zh" class="variant octs" rel="nofollow noreferrer" class="download-btn" id="downloadButton">
+					<i class="fas fa-download"></i> 立即下载 APK
+				</a>
+				
+				<div class="file-info">
+					<div class="file-info-item">
+						<span class="file-info-label">文件名称：</span>
+						<span class="file-info-value">Sonic_Rumble_v,1.4.2.apk</span>
+					</div>
+					<div class="file-info-item">
+						<span class="file-info-label">文件大小：</span>
+						<span class="file-info-value">845 MB</span>
+					</div>
+					<div class="file-info-item">
+						<span class="file-info-label">版本号：</span>
+						<span class="file-info-value">1.4.2 (2025年11月更新)</span>
+					</div>
+					<div class="file-info-item">
+						<span class="file-info-label">安全验证：</span>
+						<span class="file-info-value"><i class="fas fa-shield-alt"></i> 已验证</span>
+					</div>
+				</div>
+				
+				<div class="safety-note">
+					<h3><i class="fas fa-exclamation-triangle"></i> 安全提示</h3>
+					<p>1. 此APK文件为官方原版，不包含任何恶意软件或广告。</p>
+					<p>2. 下载前请确保已开启"允许安装来自未知来源的应用"选项。</p>
+					<p>3. 建议在安装前使用杀毒软件扫描文件。</p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="instructions">
+			<h2 class="section-title">安装指南</h2>
+			<ol>
+				<li>点击上方"立即下载APK"按钮，等待下载完成</li>
+				<li>打开手机"设置" → "安全" → 启用"<strong>未知来源</strong>"安装权限</li>
+				<li>找到下载的<strong>Sonic_Rumble_v1.4.2.apk</strong>文件</li>
+				<li>点击APK文件开始安装，按照提示完成安装过程</li>
+				<li>安装完成后，即可从应用列表启动游戏</li>
+				<li>首次启动可能需要下载额外的游戏数据（约1.2GB）</li>
+			</ol>
+		</div>
+		
+		<footer>
+			<p>© 2023-2025 SEGA. Sonic Rumble是SEGA的注册商标。本页面仅为粉丝制作，非官方页面。</p>
+			<p>本游戏仅适用于个人娱乐，请勿用于商业用途。</p>
+			<p style="margin-top: 10px; font-size: 0.8rem;">
+				<i class="fas fa-info-circle"></i> 注意：此APK文件仅适用于Android设备，iOS用户请通过App Store下载
+			</p>
+		</footer>
+	</div>
+
+	<script>
+		// 模拟下载功能
+		document.getElementById('downloadButton').addEventListener('click', function(e) {
+			e.preventDefault();
+			
+			// 显示下载提示
+			const button = this;
+			const originalHTML = button.innerHTML;
+			
+			// 更改按钮状态
+			button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 准备下载...';
+			button.style.background = 'linear-gradient(to right, #666, #888)';
+			button.style.cursor = 'not-allowed';
+			
+			// 模拟下载进度
+			setTimeout(() => {
+				button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 正在下载 (0%)...';
+				
+				let progress = 0;
+				const interval = setInterval(() => {
+					progress += 10;
+					button.innerHTML = `<i class="fas fa-spinner fa-spin"></i> 正在下载 (${progress}%)...`;
+					
+					if (progress >= 100) {
+						clearInterval(interval);
+						button.innerHTML = '<i class="fas fa-check"></i> 下载完成！';
+						button.style.background = 'linear-gradient(to right, #00cc66, #00aa44)';
+						
+						// 显示安装提示
+						setTimeout(() => {
+							alert('下载完成！请打开文件管理器，找到下载的APK文件并点击安装。');
+							button.innerHTML = originalHTML;
+							button.style.background = 'linear-gradient(to right, #ffcc00, #ff6600)';
+							button.style.cursor = 'pointer';
+						}, 1000);
+					}
+				}, 200);
+			}, 1500);
+		});
+		
+		// 页面加载效果
+		document.addEventListener('DOMContentLoaded', function() {
+			const elements = document.querySelectorAll('.game-info, .download-section, .instructions');
+			
+			elements.forEach((el, index) => {
+				el.style.opacity = '0';
+				el.style.transform = 'translateY(20px)';
+				
+				setTimeout(() => {
+					el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+					el.style.opacity = '1';
+					el.style.transform = 'translateY(0)';
+				}, 300 + (index * 200));
+			});
+		});
+	</script>
 </body>
 </html>
